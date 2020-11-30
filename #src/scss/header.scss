@@ -1,8 +1,12 @@
 .header {
-	background-color: #00001a;
+	background-color: black;
+	opacity: 0.8;
+	border-radius: 2px;
+
 
 	//header container
 	&__container {
+		z-index: 1;
 		position: relative;
 		display: flex;
 		align-items: center;
@@ -10,11 +14,13 @@
 
 		@media (max-width: 992px) {
 			justify-content: space-between;
+
 		}
 	}
 
 	&__logo {
 		width: 200px;
+		height: 200px;
 		position: relative;
 		z-index: 2;
 
@@ -40,6 +46,7 @@
 	}
 
 	&__body {
+
 		@media (max-width:992px) {
 			background-color: #03031ad7;
 			position: fixed;
@@ -47,7 +54,7 @@
 			height: 100%;
 			left: 0;
 			top: 0;
-			padding: 100px 0 20px 0;
+			padding: 150px 0 20px 0;
 			overflow: scroll;
 			opacity: 0;
 			visibility: hidden;

@@ -7,7 +7,7 @@ $fontFamily : "Montserrat";
 //@import "adaptiveFonts.scss";
 @import "zerocss.scss";
 @import "header.scss";
-
+@import "main.scss";
 
 // Variables 
 $minWidth : 320px;
@@ -49,4 +49,6 @@ $md4 : 479.98;
 
 .page {
 	flex: 1 1 auto;
+	margin: 0 auto;
+	width: 100%;
 }
