@@ -22,10 +22,13 @@
 	}
 
 	&__logo {
+		display: block;
 		width: 200px;
-		height: 200px;
+		//height: 100px;
 		position: relative;
 		z-index: 2;
+		overflow: hidden;
+
 
 		@media (max-width: 992px) {
 			position: absolute;
