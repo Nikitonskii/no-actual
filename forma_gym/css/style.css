@@ -174,6 +174,7 @@ h6 {
   background: url("../img/header.jpg") 50%/cover no-repeat;
   padding: 0 0px 50px 0;
   font-family: "Montserrat";
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .main__container {
@@ -204,24 +205,24 @@ h6 {
 }
 
 .offer__advantages .offer__count {
-  font-size: 25px;
   font-weight: 600;
   padding: 20px 0;
+  font-size: calc(18px + 7 * ((100vw - 320px) / (1100 - 320)));
 }
 
 .offer__advantages .offer__advantages-text {
   width: 100%;
-  font-size: 15px;
   padding: 0 20px 30px 0 0;
 }
 
 .offer__advantages .offer__advantages-text h1 {
-  font-size: 30px;
+  font-size: calc(20px + 10 * ((100vw - 320px) / (1100 - 320)));
   font-weight: 600;
   padding: 0 20px 20px 0;
 }
 
 .offer__advantages .offer__advantages-text p {
+  font-size: calc(10px + 5 * ((100vw - 320px) / (1280 - 320)));
   padding: 0 30px 10px 0;
 }
 
@@ -435,7 +436,7 @@ h6 {
   height: 100%;
   margin: 0 auto;
   font-family: "Montserrat";
-  padding: 50px 0 0 0;
+  padding: 50px 0 70px 0;
 }
 
 .services_header {
@@ -455,38 +456,165 @@ h6 {
 }
 
 .services__columns {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   display: flex;
   justify-content: space-between;
   margin: 0px -5px;
 }
 
 .services__column {
-  flex: 0 1 33.33%;
+  flex: 0 1 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
   border: 2px solid black;
   border-radius: 15px;
-  padding: 0px 5px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin: 0px -10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .services__column .column__image {
   width: 100%;
   height: 100%;
+  max-height: 350px;
+}
+
+.services__column .column__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 0;
+  display: block;
 }
 
 .services__column .column__title {
   text-align: center;
   flex: 1 1 auto;
-  font-size: 25px;
   padding: 20px;
   text-transform: uppercase;
+  font-weight: 500;
+  font-size: calc(16px + 11 * ((100vw - 320px) / (1100 - 320)));
 }
 
 .services__column p {
   padding: 10px 10px;
+}
+
+.about {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  padding: 50px 0;
+  font-family: "Montserrat";
+}
+
+.about__container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.about__image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 0 30px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.about__image img {
+  display: block;
+  width: 50%;
+  height: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50%;
+     object-position: 50%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+}
+
+.about__info {
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px 100px;
+  margin: 50px 0 0 0px;
+  background-color: burlywood;
+  -webkit-clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.about__info .about__info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 50px;
+}
+
+.about__header {
+  text-align: center;
+  padding: 0 0 50px 0;
+}
+
+.about__header h3 {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: calc(18px + 7 * ((100vw - 320px) / (1100 - 320)));
+}
+
+.about__header p {
+  font-size: calc(12px + 6 * ((100vw - 320px) / (1100 - 320)));
+}
+
+.about__content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -5px;
+}
+
+.about__column {
+  flex: 0 1 50%;
+  padding: 0 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0 0 0;
+}
+
+.about__column .about__column-title {
+  line-height: 20px;
+  padding: 20px 10px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: calc(12px + 6 * ((100vw - 320px) / (1100 - 320)));
+}
+
+.about__column img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.about__column p {
+  padding: 0px 10px;
+  font-size: calc(10px + 5 * ((100vw - 320px) / (1100 - 320)));
+}
+
+.calculation {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: skyblue;
+  padding: 20px 0 20px 0;
+  font-family: "Montserrat";
 }
 
 .wraper {
@@ -551,7 +679,7 @@ h6 {
     height: 100%;
     left: 0;
     top: 0;
-    padding: 150px 0 20px 0;
+    padding: 100px 0 20px 0;
     overflow: scroll;
     opacity: 0;
     visibility: hidden;
