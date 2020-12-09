@@ -1,27 +1,105 @@
 .calculation {
 	width: 100%;
 	height: 100%;
+	min-height: 100vh;
 	margin: 0 auto;
-	background-color: skyblue;
-	padding: 20px 0 20px 0;
+	background: #F09819;
+	/* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #EDDE5D, #F09819);
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #EDDE5D, #F09819);
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	padding: 20px 0 100px 0;
 	font-family: $fontFamily;
+	background-attachment: fixed;
 }
 
 .calculating {}
 
-.container {}
+.container {
+	text-align: center;
+}
 
-.title {}
+.title {
+	display: block;
+	position: relative;
+	font-weight: 500;
+	font-size: calc(18px + 8 * ((100vw - 320px) / (1100 - 320)));
+	padding: 0 0 20px 0;
 
-.calculating__field {}
+}
 
-.calculating__subtitle {}
+.calculating__field {
 
-.calculating__choose {}
+	font-size: calc(15px + 9 * ((100vw - 320px) / (1100 - 320)));
+}
 
-.calculating__choose-item {}
+.calculating__subtitle {
+	margin: 30px 0 0 0;
+}
 
-.calculating__choose-item_active {}
+.calculating__choose {
+	display: flex;
+	justify-content: center;
+}
+
+.calculating__choose-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid black;
+	cursor: pointer;
+	max-width: 100%;
+	height: 100%;
+	padding: 20px 20px;
+	margin: 30px 0 0 10px;
+	font-size: 20px;
+	border-radius: 5px;
+
+	&:hover {
+
+		animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+
+
+		@keyframes shake-bottom {
+
+			0%,
+			100% {
+				transform: rotate(0deg);
+				transform-origin: 50% 100%;
+			}
+
+			10% {
+				transform: rotate(2deg);
+			}
+
+			20%,
+			40%,
+			60% {
+				transform: rotate(-4deg);
+			}
+
+			30%,
+			50%,
+			70% {
+				transform: rotate(4deg);
+			}
+
+			80% {
+				transform: rotate(-2deg);
+			}
+
+			90% {
+				transform: rotate(2deg);
+			}
+		}
+	}
+}
+
+.calculating__choose-item_active {
+	background-color: rgb(63, 236, 63);
+}
 
 .calculating__choose_medium {}
 
@@ -31,4 +109,49 @@
 
 .calculating__total {}
 
-.calculating__result {}
+.calculating__result {
+	color: rgba(0, 0, 0, 0.6);
+	text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+		0px -5px 35px rgba(255, 255, 255, 0.3);
+	font-weight: 600;
+}
+
+#height {
+	background-image: url("../img/calc1.png");
+	background-repeat: no-repeat;
+	background-position: right;
+	outline: none;
+}
+
+#weight {
+	background-image: url("../img/calc2.png");
+	background-repeat: no-repeat;
+	background-position: right;
+	outline: none;
+}
+
+#age {
+	background-image: url("../img/calc3.png");
+	background-repeat: no-repeat;
+	background-position: right;
+	outline: none;
+}
+
+.pulsate-fwd {
+	animation: pulsate-fwd 0.5s ease-in-out infinite both;
+}
+
+@keyframes pulsate-fwd {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		color: red;
+		transform: scale(1.1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}

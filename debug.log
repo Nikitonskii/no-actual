@@ -1,0 +1,4 @@
+[1205/114112.278:ERROR:directory_reader_win.cc(43)] FindFirstFile: System nie moze odnalezc okreslonej sciezki. (0x3)
+[1206/114112.351:ERROR:directory_reader_win.cc(43)] FindFirstFile: System nie moze odnalezc okreslonej sciezki. (0x3)
+[1207/114112.415:ERROR:directory_reader_win.cc(43)] FindFirstFile: System nie moze odnalezc okreslonej sciezki. (0x3)
+[1208/114112.502:ERROR:directory_reader_win.cc(43)] FindFirstFile: System nie moze odnalezc okreslonej sciezki. (0x3)

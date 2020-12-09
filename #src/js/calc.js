@@ -32,7 +32,7 @@ initLocalStorage('.calculating__choose_big div', 'calculating__choose-item_activ
 
 function calcTotal() {
 	if (!sex || !height || !weight || !age || !ratio) {
-		result.textContent = '______! ';
+		result.textContent = 'Упустили один из параметров ! ';
 		return;
 	}
 
@@ -73,9 +73,11 @@ function getDynamicInfo(selector) {
 
 	input.addEventListener('input', () => {
 		if (input.value.match(/\D/g)) {
-			input.style.border = "1px solid red";
+			//input.style.border = "1px solid red";
+			input.classList.add('pulsate-fwd');
 		} else {
-			input.style.border = "none";
+			input.classList.remove('pulsate-fwd');
+			//input.style.border = "none";
 		}
 		switch (input.getAttribute('id')) {
 			case 'height':

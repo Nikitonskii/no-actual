@@ -48,7 +48,7 @@ class BuildNewInfo {
 let offer1 = new BuildNewInfo(
 	"01",
 	"Hello mazafaka",
-	"its great story about us and our hobby blablabalblablablabla Lorem, ipsum dolor sit amet consectetur adipisicing elit",
+	"Посетите наш зал и вы будете на 7м небе от счастья...Лучшие тренажеры, лучшие тренера !!!",
 	"#",
 	//".offer__advantages",
 	".offer",
@@ -56,7 +56,7 @@ let offer1 = new BuildNewInfo(
 let offer2 = new BuildNewInfo(
 	"02",
 	"Hello mazafaka its SECOND offert",
-	"its great story about us and our hobby",
+	"КУпите  качественный, проверненный и в хуй вкусный СПОРТПИТ",
 	"#",
 	//".offer__advantages",
 	".offer",
@@ -64,7 +64,7 @@ let offer2 = new BuildNewInfo(
 let offer3 = new BuildNewInfo(
 	"03",
 	"Hello mazafaka its THIRD offert",
-	"its great story about us and our hobby",
+	"Врывайтесь с кентами, семьей, сам(если вы одинокий волчара), ну а вообще можете и с телками",
 	"#",
 	//".offer__advantages",
 	".offer",
@@ -72,7 +72,7 @@ let offer3 = new BuildNewInfo(
 let offer4 = new BuildNewInfo(
 	"04",
 	"Hello mazafaka its FOURTH  offert",
-	"its great story about us and our hobby",
+	"Групповые занятия, с лучшими из лучгих в лучшем для лучших !!!",
 	"#",
 	//".offer__advantages",
 	".offer",

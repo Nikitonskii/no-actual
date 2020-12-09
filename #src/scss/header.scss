@@ -111,22 +111,51 @@
 		font-family: $fontFamily;
 		text-transform: uppercase;
 		white-space: nowrap;
+		position: relative;
+		display: inline-block;
+		font-weight: 800;
+		text-decoration: none;
+		overflow: hidden;
+		transition: clip-path 350ms ease;
+		font-size: 15px;
+
+		&::before {
+			position: absolute;
+			content: attr(data-content);
+			color: #ffaa22;
+			/* text-decoration: underline ;*/
+			clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+			transition: clip-path 350ms ease;
+		}
+
+		&:hover::before {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		}
 
 		@media (max-width:992px) {
 			font-size: 20px;
 			font-weight: 600;
 
-			&:hover {
-				text-decoration: underline;
-				text-underline-offset: 0.5em;
+
+			&:hover::before {
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+			}
+
+			&::before {
+				position: absolute;
+				content: attr(data-content);
+				color: #ee0909;
+				/* text-decoration: underline ;*/
+				clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+				transition: clip-path 350ms ease;
 			}
 		}
 
 		@media(min-width: 992px) {
 
 			&:hover {
-				text-decoration: underline;
-				text-underline-offset: 0.5em;
+				//text-decoration: underline;
+				//text-underline-offset: 0.5em;
 			}
 		}
 	}
