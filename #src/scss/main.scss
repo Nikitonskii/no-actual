@@ -61,37 +61,57 @@
 
 .sign {
 	position: absolute;
-	top: 10%;
+	top: 5%;
 	left: 10%;
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
+
 
 	&__word {
-		font-size: 5.6rem;
+		letter-spacing: 5px;
+		padding: 0 15px;
+		font-size: 45px;
 		text-align: center;
 		line-height: 1;
 		color: #c6e2ff;
 		animation: neon .08s ease-in-out infinite alternate;
+
+	}
+
+	&>:first-child {
+		font-size: 70px;
+		letter-spacing: 8px;
+		font-weight: 700;
+	}
+
+
+	p {
+		font-weight: 600;
+		margin: 20px 0 0 0;
+		text-transform: uppercase;
+		font-size: 30px;
+		color: #ffffff
 	}
 
 }
+
 
 /*-- Animation Keyframes --*/
 
 // animation
 
-/* @keyframes neon {
+@keyframes neon {
 	from {
 		text-shadow:
-			0 0 6px rgba(202, 228, 225, 0.92),
-			0 0 30px rgba(202, 228, 225, 0.34),
-			0 0 12px rgba(219, 229, 240, 0.52),
-			0 0 21px rgba(220, 230, 241, 0.92),
-			0 0 34px rgba(231, 238, 245, 0.78),
-			0 0 54px rgba(236, 240, 245, 0.92);
+			0 0 6px rgba(183, 221, 14, 0.92),
+			0 0 30px rgba(225, 240, 15, 0.34),
+			0 0 12px rgba(201, 235, 11, 0.52),
+			0 0 21px rgba(203, 224, 11, 0.92),
+			0 0 34px rgba(231, 228, 9, 0.78),
+			0 0 54px rgba(226, 230, 9, 0.92);
 	}
 
 	to {
@@ -103,4 +123,4 @@
 			0 0 38px rgba(200, 221, 13, 0.88),
 			0 0 60px rgb(219, 206, 16);
 	}
-} */
+}

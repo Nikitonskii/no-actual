@@ -1,0 +1,89 @@
+.prices {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	min-height: 100vh;
+	background: url("../img/2.jpg") 50%/cover no-repeat;
+	font-family: $fontFamily;
+	text-align: center;
+}
+
+.prices__panel {
+	min-height: 100vh;
+	overflow: hidden;
+	display: flex;
+}
+
+.panel {
+	background: #6b0f9c;
+	color: #000;
+	text-align: center;
+	align-items: center;
+	transition:
+		font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+		flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+		background 0.2s;
+	font-size: 20px;
+	background-size: cover;
+	background-position: center;
+	flex: 1;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.panel1 {
+	background: #cae7b9;
+	opacity: 0.8;
+}
+
+.panel2 {
+	background: #f3de8a;
+	opacity: 0.8;
+}
+
+.panel3 {
+	background: #eb9486;
+	opacity: 0.8;
+}
+
+.panel>* {
+	margin: 0;
+	width: 100%;
+	transition: transform 0.5s;
+	flex: 1 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.panel>*:first-child {
+	transform: translateY(-100%);
+}
+
+.panel.open-active>*:first-child {
+	transform: translateY(0);
+}
+
+.panel>*:last-child {
+	transform: translateY(100%);
+}
+
+.panel.open-active>*:last-child {
+	transform: translateY(0);
+}
+
+.panel p {
+	font-size: 0.8em;
+	opacity: 0.8;
+}
+
+.panel p:nth-child(2) {
+	font-size: calc(25px + 15 * ((100vw - 320px) / (1100 - 320)));
+}
+
+.panel.open {
+	opacity: 1;
+	flex: 5;
+	font-size: calc(18px + 12 * ((100vw - 320px) / (1100 - 320)));
+}

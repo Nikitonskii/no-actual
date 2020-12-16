@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 window.addEventListener('DOMContentLoaded', () => {
 
 	const tl = gsap.timeline({ defaults: { ease: 'power1.out' } });
@@ -169,35 +171,43 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	let offer1 = new BuildNewInfo(
 		"01",
-		"Hello mazafaka",
-		"Посетите наш зал и вы будете на 7м небе от счастья...Лучшие тренажеры, лучшие тренера !!!",
+		"Crossfit арена",
+		"Множество снаряжения, которое поможет тебе не только приобрести желанную форму, но и зверскую выносливость",
 		"#",
 		//".offer__advantages",
 		".offer",
+		"active-offer",
+		'offer__advantages',
 	);
 	let offer2 = new BuildNewInfo(
 		"02",
-		"Hello mazafaka its SECOND offert",
-		"КУпите  качественный, проверненный и в хуй вкусный СПОРТПИТ",
+		"Фитнесс территория",
+		"Уютное место в нашем зале, где каждый обретет колоссальный запас здоровья и конечно же мышц. Наши прекрасные тренера поспособствуют вам в этом как никто другой",
 		"#",
 		//".offer__advantages",
 		".offer",
+		"active-offer",
+		'offer__advantages',
 	);
 	let offer3 = new BuildNewInfo(
 		"03",
-		"Hello mazafaka its THIRD offert",
-		"Врывайтесь с кентами, семьей, сам(если вы одинокий волчара), ну а вообще можете и с телками",
+		"Спортпит островок",
+		"Большая часть нашего здоровья как физического так и психического зависит от питания, доверьтесь лучшим из лучших, позвольте сделать вас счастливее ! ",
 		"#",
 		//".offer__advantages",
 		".offer",
+		"active-offer",
+		'offer__advantages',
 	);
 	let offer4 = new BuildNewInfo(
 		"04",
-		"Hello mazafaka its FOURTH  offert",
-		"Групповые занятия, с лучшими из лучгих в лучшем для лучших !!!",
+		"Hard местность",
+		"Место где твои мышцы наливаются кровью и растут со скоростью сопоставимой восстановлению дедпула. После этого места ты забудешь о тротуарах! ",
 		"#",
 		//".offer__advantages",
 		".offer",
+		"active-offer",
+		'offer__advantages',
 	);
 
 	let offers = [offer1, offer2, offer3, offer4];
@@ -248,6 +258,25 @@ window.addEventListener('DOMContentLoaded', () => {
 		offers[slideIndex - 1].render();
 	});
 
+	// Scrolls 
+
+
+	// Price akord
+	const panels = document.querySelectorAll('.panel');
+
+	function toggleOpen() {
+		this.classList.toggle('open');
+	}
+
+	function toggleActive(e) {
+		console.log(e.propertyName);
+		if (e.propertyName.includes('flex')) {
+			this.classList.toggle('open-active');
+		}
+	}
+
+	panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+	panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
 
 
 

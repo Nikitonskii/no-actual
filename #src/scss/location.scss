@@ -1,0 +1,125 @@
+.location {
+	width: 100%;
+	margin: 0 auto;
+	height: 100%;
+	min-height: 100vh;
+	font-family: $fontFamily;
+	text-align: center;
+
+	.location__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+
+.location__map {
+	flex: 0 1 50%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+
+	#map {
+
+		width: 100%;
+		height: 100%;
+		min-height: 450px;
+		border: 20px;
+	}
+}
+
+.location__info {
+	flex: 0 1 50%;
+	width: 100%;
+	height: 100%;
+	min-height: 450px;
+	padding: 0 20px;
+	display: flex;
+	flex-direction: column;
+	//justify-content: space-between;
+	align-items: center;
+	color: black;
+
+	h3 {
+
+		font-size: calc(15px + 10 * ((100vw - 320px) / (1100 - 320)));
+	}
+
+	p {
+		padding: 20px 0px;
+	}
+
+	.location__contacts {
+
+		.socialIcons {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			font-size: calc(15px + 5 * ((100vw - 320px) / (1100 - 320)));
+
+			li {
+				margin: 20px 0px;
+
+				a {
+					padding: 0px 10px;
+					font-size: 30px;
+				}
+			}
+		}
+	}
+
+}
+
+$dark:#F1DABF;
+$place:#365899;
+$time:#1DA1F2;
+$instagram:#C32AA3;
+
+
+
+@function Shadow($color, $number) {
+	$value:'0px 0px 0px #{$color}';
+
+	@for $i from 1 through $number {
+		$value:"#{$value},0px #{$i}px 2px "+darken($color, $i*5);
+	}
+
+	@return unquote($value);
+}
+
+#soc {
+	text-align: center;
+	//display: inline-block;
+	font-size: 40px;
+	height: 100px;
+	width: 100px;
+	//line-height: 100px;
+	color: $dark;
+	transition: all ease 0.5s;
+	text-shadow:
+		0px 0px 1px rgba(0, 0, 0, 1),
+		0px 0px 1px rgba(0, 0, 0, 1);
+	transform: rotateX(-30deg);
+
+	&:hover {
+		transform: rotateX(-30deg) translateY(-20px);
+
+		&.place {
+			color: $place;
+			text-shadow: Shadow($place, 10);
+		}
+
+		&.time {
+			color: $time;
+			text-shadow: Shadow($time, 10);
+		}
+
+		&.instagram {
+			color: $instagram;
+			text-shadow: Shadow($instagram, 10);
+		}
+	}
+}

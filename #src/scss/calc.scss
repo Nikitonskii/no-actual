@@ -3,13 +3,7 @@
 	height: 100%;
 	min-height: 100vh;
 	margin: 0 auto;
-	background: #F09819;
-	/* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #EDDE5D, #F09819);
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #EDDE5D, #F09819);
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+	background: url("../img/calc-img.jpg") 50%/cover no-repeat;
 	padding: 20px 0 100px 0;
 	font-family: $fontFamily;
 	background-attachment: fixed;

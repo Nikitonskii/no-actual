@@ -1,0 +1,123 @@
+.schedule {
+	background: url("../img/4.jpg") 50%/cover no-repeat;
+	width: 100%;
+	margin: 0 auto;
+	height: 100%;
+	min-height: 100vh;
+	font-family: $fontFamily;
+	text-align: center;
+
+	h2 {
+		padding: 10px 0px;
+		color: #fff;
+		font-size: calc(18px + 12 * ((100vw - 320px) / (1100 - 320)));
+	}
+}
+
+.card1 {
+	background-color: blueviolet;
+}
+
+.card2 {
+	background-color: brown;
+}
+
+.card3 {
+	background-color: blueviolet;
+}
+
+.card4 {
+	background-color: brown;
+}
+
+.card5 {
+	background-color: blueviolet;
+}
+
+.card6 {
+	background-color: brown;
+}
+
+.card7 {
+	background-color: blueviolet;
+}
+
+.card8 {
+	background-color: brown;
+}
+
+.card9 {
+	background-color: blueviolet;
+}
+
+
+.schedule-list {
+	margin: 0 auto;
+	padding: 10px 0;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-gap: 10px;
+	grid-template: 33% 33% 33%/ 33% 33% 33%;
+	justify-items: stretch;
+	align-items: center;
+
+
+	.schedule__item {
+		width: 100%;
+		height: 150px;
+		position: relative;
+
+		&:hover .schedule__card-front {
+			transform: rotateY(180deg);
+		}
+
+		&:hover .schedule__card-back {
+			transform: rotateY(0deg);
+			z-index: 3;
+		}
+
+		.schedule__card-front {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			transition: .6s ease-in-out;
+			border-radius: 10px;
+			box-shadow: 0 10px 5px 0 rgba(0, 0, 0, 0.3);
+			backface-visibility: hidden;
+			z-index: 2;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			p {
+				color: black;
+				font-weight: 800;
+				font-size: calc(18px + 10 * ((100vw - 320px) / (1100 - 320)));
+			}
+		}
+
+		.schedule__card-back {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			transition: .6s ease-in-out;
+			border-radius: 10px;
+			box-shadow: 0 10px 5px 0 rgba(0, 0, 0, 0.3);
+			backface-visibility: hidden;
+			transform: rotateY(180deg);
+			background: #eed708;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			p {
+				color: black;
+				font-weight: 400;
+				font-size: calc(12px + 8 * ((100vw - 320px) / (1100 - 32)));
+			}
+		}
+	}
+}

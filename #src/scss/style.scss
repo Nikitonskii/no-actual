@@ -7,11 +7,12 @@ $fontFamily : "Montserrat";
 @import "zerocss.scss";
 @import "header.scss";
 @import "main.scss";
-@import "services.scss";
-@import "aboutUs.scss";
+@import "price.scss";
+@import "location.scss";
 @import "calc.scss";
 @import "facilities.scss";
-
+@import "schedule.scss";
+@import "footer.scss";
 // Variables 
 $minWidth : 320px;
 $mw :1100;
@@ -36,6 +37,7 @@ $md4 : 480;
 	max-width: $mw + px;
 	margin: 0 auto;
 	padding: 0 10px;
+
 	/* @media (max-width: $md1 + px) {
 		max-width: 970px;
 	}
