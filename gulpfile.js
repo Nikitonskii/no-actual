@@ -1,5 +1,6 @@
+'use strict';
 const autoPrefixer = require('gulp-autoprefixer');
-
+const webpack = require("webpack-stream");
 let project_folder = require("path").basename(__dirname);
 let source_folder = "#src";
 
@@ -16,7 +17,7 @@ let path = {
 	src: {
 		html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
 		css: source_folder + "/scss/style.scss",
-		js: source_folder + "/js/script.js",
+		js: source_folder + "/js/main.js",
 		img: source_folder + "/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}",      //  ** means that we listen all folders in img 
 		fonts: source_folder + "/fonts/*.ttf",
 	},
@@ -44,6 +45,7 @@ let { src, dest } = require('gulp'),
 	imagemin = require("gulp-imagemin"),
 	webp = require("gulp-webp"),
 	webphtml = require("gulp-webp-html");
+
 //webpcss = require("gulp-webpcss");
 
 
@@ -103,7 +105,7 @@ function css() {
 		.pipe(dest(path.build.css))
 		.pipe(browsersync.stream());
 }
-function js() {
+/* function js() {
 	return src(path.src.js)
 		.pipe(fileinclude())
 		.pipe(dest(path.build.js))
@@ -117,7 +119,67 @@ function js() {
 		)
 		.pipe(dest(path.build.js))
 		.pipe(browsersync.stream());
-}
+} */
+
+function js() {
+	return src("./#src/js/main.js")
+		.pipe(webpack({
+			mode: 'development',
+			output: {
+				filename: 'script.js'
+			},
+			watch: false,
+			devtool: "source-map",
+			module: {
+				rules: [
+					{
+						test: /\.m?js$/,
+						exclude: /(node_modules|bower_components)/,
+						use: {
+							loader: 'babel-loader',
+							options: {
+								presets: [['@babel/preset-env', {
+									debug: true,
+									corejs: 3,
+									useBuiltIns: "usage"
+								}]]
+							}
+						}
+					}
+				]
+			}
+		}))
+		.pipe(dest(path.build.js))
+		.pipe(browsersync.stream());
+};
+gulp.task("build-prod-js", () => {
+	return gulp.src("./#src/js/main.js")
+		.pipe(webpack({
+			mode: 'production',
+			output: {
+				filename: 'script.js'
+			},
+			module: {
+				rules: [
+					{
+						test: /\.m?js$/,
+						exclude: /(node_modules|bower_components)/,
+						use: {
+							loader: 'babel-loader',
+							options: {
+								presets: [['@babel/preset-env', {
+									corejs: 3,
+									useBuiltIns: "usage"
+								}]]
+							}
+						}
+					}
+				]
+			}
+		}))
+		.pipe(dest(path.build.js));
+});
+
 
 function images() {
 	return src(path.src.img)

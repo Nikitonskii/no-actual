@@ -60,9 +60,20 @@ $md4 : 480;
 }
 
 .sec-text {
+	//background: linear-gradient(to right, #fffc00, #ffffff);
 	padding: 2% 8%;
 	height: auto;
+	opacity: 0;
+	transform: translateY(60px);
+	transition: 0.8s all ease-in-out;
+	font-weight: 500;
+}
 
+.appear {
+	opacity: 1;
+	transform: translateY(0px);
+	padding: 2% 8%;
+	height: auto;
 }
 
 .sec-text__title {
@@ -73,4 +84,8 @@ $md4 : 480;
 
 .sec-text__dsc {
 	font-size: 1em;
+}
+
+.modal {
+	display: none;
 }

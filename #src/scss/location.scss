@@ -2,14 +2,25 @@
 	width: 100%;
 	margin: 0 auto;
 	height: 100%;
-	min-height: 100vh;
+	//min-height: 100vh;
 	font-family: $fontFamily;
 	text-align: center;
+	padding: 20px 0px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+	@media(max-width: 778px) {
+		padding: 0px;
+	}
 
 	.location__container {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		flex-wrap: wrap;
+
+		@media(max-width: 778px) {
+			display: block;
+		}
 	}
 }
 
@@ -41,8 +52,12 @@
 	align-items: center;
 	color: black;
 
-	h3 {
+	@media(max-width: 778px) {
+		padding: 15px 0 0 0;
+	}
 
+	h3 {
+		font-weight: 500;
 		font-size: calc(15px + 10 * ((100vw - 320px) / (1100 - 320)));
 	}
 
@@ -77,6 +92,8 @@ $dark:#F1DABF;
 $place:#365899;
 $time:#1DA1F2;
 $instagram:#C32AA3;
+$call:#54e346;
+$eat: #13ec13;
 
 
 
@@ -96,7 +113,7 @@ $instagram:#C32AA3;
 	font-size: 40px;
 	height: 100px;
 	width: 100px;
-	//line-height: 100px;
+	margin: 0 0 0 15px;
 	color: $dark;
 	transition: all ease 0.5s;
 	text-shadow:
@@ -120,6 +137,16 @@ $instagram:#C32AA3;
 		&.instagram {
 			color: $instagram;
 			text-shadow: Shadow($instagram, 10);
+		}
+
+		&.call {
+			color: $call;
+			text-shadow: Shadow($call, 10);
+		}
+
+		&.eat {
+			color: $eat;
+			text-shadow: Shadow($eat, 10);
 		}
 	}
 }

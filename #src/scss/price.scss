@@ -6,12 +6,17 @@
 	background: url("../img/2.jpg") 50%/cover no-repeat;
 	font-family: $fontFamily;
 	text-align: center;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .prices__panel {
 	min-height: 100vh;
 	overflow: hidden;
 	display: flex;
+
+	@media(max-width: 425px) {
+		flex-direction: column;
+	}
 }
 
 .panel {
@@ -30,11 +35,17 @@
 	justify-content: center;
 	display: flex;
 	flex-direction: column;
+
+}
+
+.panel h4 {
+	font-size: calc(25px + 15 * ((100vw - 320px) / (1100 - 320)));
 }
 
 .panel1 {
 	background: #cae7b9;
 	opacity: 0.8;
+
 }
 
 .panel2 {
@@ -59,28 +70,49 @@
 
 .panel>*:first-child {
 	transform: translateY(-100%);
+
+	@media(max-width: 425px) {
+		transform: translateX(-100%);
+	}
 }
 
 .panel.open-active>*:first-child {
 	transform: translateY(0);
+
+	@media(max-width: 425px) {
+		transform: translateX(0);
+	}
 }
 
 .panel>*:last-child {
 	transform: translateY(100%);
+
+	@media(max-width: 425px) {
+		transform: translateX(100%);
+	}
 }
 
 .panel.open-active>*:last-child {
 	transform: translateY(0);
+
+	@media(max-width: 425px) {
+		transform: translateX(0);
+	}
 }
 
 .panel p {
 	font-size: 0.8em;
-	opacity: 0.8;
+	opacity: 1;
 }
 
-.panel p:nth-child(2) {
-	font-size: calc(25px + 15 * ((100vw - 320px) / (1100 - 320)));
+.show {
+	display: block;
 }
+
+
+/* .panel p:nth-child(2) {
+	font-size: calc(25px + 15 * ((100vw - 320px) / (1100 - 320)));
+} */
 
 .panel.open {
 	opacity: 1;

@@ -1,7 +1,7 @@
 {
-  "name": "forma-gym",
+  "name": "project",
   "version": "1.0.0",
-  "description": "gym",
+  "description": "pleasure",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -33,11 +33,13 @@
     "gulp-uglify-es": "^2.0.0",
     "gulp-webp": "^4.0.1",
     "gulp-webpcss": "^1.1.1",
+    "hover-effect": "^1.1.0",
     "webpack": "^4.41.2",
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
     "gsap": "^3.5.1",
-    "gulp-webp-html": "^1.0.2"
+    "gulp-webp-html": "^1.0.2",
+    "three": "^0.123.0"
   }
 }
